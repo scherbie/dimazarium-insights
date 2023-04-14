@@ -9,7 +9,7 @@ appInsights.setup(process.env.APPLICATIONINSIGHTS_CONNECTION_STRING)
     .setUseDiskRetryCaching(true)
     .setSendLiveMetrics(true)
     .setDistributedTracingMode(appInsights.DistributedTracingModes.AI);
-    appInsights.defaultClient.config.samplingPercentage = 50;
+    appInsights.defaultClient.config.samplingPercentage = 100;
     appInsights.start();
 
 var createError = require('http-errors');
@@ -26,6 +26,8 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+
+app.set('appInsights', appInsights.defaultClient);
 
 app.use(logger('dev'));
 app.use(express.json());
