@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'dimazarium-insights'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C928C16108E145FAB234B58B284FEB07 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0925703AC4774D40AA314A5EEDA9300D }}
           package: .
